@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Game Trend</title>
+	<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<link href="css/wishlist.css" rel="stylesheet" /> 
+	<script>
+	$(document).ready(function(){
+	    // Toggle the side navigation
+	    const sidebarToggle = $('sidebarToggle');
+	    if (sidebarToggle) {    	
+	        // Uncomment Below to persist sidebar toggle between refreshes
+	        if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+	            document.body.classList.toggle('sb-sidenav-toggled');
+	        }
+	        sidebarToggle.on('click', function(event) {
+	            event.preventDefault();
+	            document.body.classList.toggle('sb-sidenav-toggled');
+	            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+	        });
+	    }
+	    
+	    $('#loginBtn').on('click', function() {
+	    	child = open("login.html", "new page", "width=600, height=600, top=100, left=100, resizable=yes, location=no");
+	    });
+	    
+	    $('#joinBtn').on('click', function() {
+	    	child = open("Join.html", "new page", "width=600, height=900, top=100, left=100, resizable=yes, location=no");
+	    });
+	    
+	    $('#logout').on('click', function() {
+	    	alert('로그아웃 되었습니다.');    	
+	    });
+		$('.close').click(function(){
+			  var $target = $(this).parents('li');
+			  $target.hide('slow', function(){ $target.remove(); });
+		})
+	});
+	</script>
+	<style>
+@font-face {
+    font-family: 'KoPubDotumMedium';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+	body {
+		font-family: 'KoPubDotumMedium';
+	}
+		.wishlist {
+			width: 70%;
+			margin: auto;
+		}
+		.subtext {
+			color: #7F7C82;
+		}
+		.none {
+			text-decoration: none;
+			color: black;
+		}
+		.none:hover {
+			color: #A182FE;
+		}
+		.close {
+			text-align: right;
+			padding: 0;
+			text-decoration: none;
+		}
+		#close:hover {
+			background-color: #A182FE;
+		}
+		.nav-item:hover {
+			background-color: #E8E0FF;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-light bg-light fixed-top">
+	  <div class="container-fluid">
+		  <div class="d-flex justify-content-start">			
+		    <a class="navbar-brand " href="index.html">
+		    	<img src="images/logo_sm.png" width="10%">	    	
+		    	<b>Game Trend</b>
+		    </a>	  	
+		  </div>	    	   
+	      <form class="d-flex justify-content-center">   
+	        <input class="form-control me-2 col-12" type="Search" placeholder="검색" aria-label="Search">
+	        <button class="btn btn-primary mainColor" type="submit">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg>	        	
+	        </button>        
+	      </form>
+		  <form class="d-flex justify-content-end">
+		    <button class="btn btn-primary me-2 mainColor" type="button" id="loginBtn">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16" style="display: inline">
+				  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+				  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+				</svg>		    	
+		    	로그인
+		    </button>
+		    <button class="btn btn-outline-primary me-2 mainColorOutline" type="button" id="joinBtn">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+				  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+				</svg>		    
+		    	회원가입
+		    </button>
+	  		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>		    		   		 
+		  </form>
+
+		    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><b>마이 페이지</b></h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item mx-auto">
+            <a class="nav-link active" aria-current="page" href="#">
+				<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" color="#7F7C82">
+				  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+				  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+				</svg>            	
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="wishlist" class="nav-link active" aria-current="page" href="wishlist.html">위시리스트</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">회원 정보 수정</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" href="#" id="logout">로그아웃</a>
+          </li>          
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-primary" type="submit">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+			  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+			</svg>
+          </button>
+        </form>
+      </div>
+    </div>
+    </div>             
+	</nav>
+	<div class="wishlist mt-5 mb-5">	
+		<h2 class="pt-5 pb-5" style="display: inline-block">위시리스트</h2>
+		<ul class="row row-cols-1 row-cols-md-3 g-4 row list-unstyled">
+		  <li class="col">
+		  	
+		    <div class="card h-100">
+				<a class="close" href="#">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16" color="#7F7C82" id="close">
+				  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+				  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+				</svg>					
+				</a>
+				<a href="sub_ps1.html"  class="none">
+		      <img src="https://cdn2.whatoplay.com/screenshots/56566_1630644767slide-1.jpg" class="card-img-top" alt="...">
+		      
+		      <div class="card-body">
+		        <h5 class="card-title"><b>호라이즌 포비든 웨스트</b></h5>
+		        <p class="card-text subtext">먼 미래의 종말 이후의 Horizon 세계로 돌아가서 먼 땅을 탐험하고, 더 크고 경외심을 불러일으키는 기계와 싸우고, 놀라운 새로운 부족과 조우하세요.</p>
+		      </div>
+		    </div>
+		    </a>
+		  </li>
+		  <li class="col">
+
+		    <div class="card h-100">
+		    <a class="close" href="#">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16" color="#7F7C82" id="close">
+				  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+				  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+				</svg>		    
+		    </a>
+		  	<a href="sub_xbox1.html"  class="none">		    
+		      <img src="https://cdn2.whatoplay.com/screenshots/92012_1623385194slide-1.jpg" class="card-img-top" alt="...">
+		      <div class="card-body">
+		        <h5 class="card-title"><b>엘든 링</b></h5>
+		        <p class="card-text subtext">변색된 일어나서 엘든 링의 힘을 휘두르고 그 사이의 땅에서 엘든 로드가 되기 위해 은총의 인도를 받으세요.</p>
+		      </div>
+		    </div>
+		    </a>
+		  </li>
+		  <li class="col">
+
+		    <div class="card h-100">
+		    <a class="close" href="#">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16" color="#7F7C82" id="close">
+				  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+				  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+				</svg>		    
+		    </a>
+		  	<a href="sub_pc1.html"  class="none">		    
+		      <img src="https://cdn2.whatoplay.com/screenshots/3851slide-1.jpg" class="card-img-top" alt="...">
+		      <div class="card-body">
+		        <h5 class="card-title"><b>리그 오브 레전드</b></h5>
+		        <p class="card-text subtext">League of Legends는 RTS의 속도와 강렬함과 RPG 요소가 결합된 빠르게 진행되는 경쟁 온라인 게임입니다.</p>
+		      </div>
+		    </div>
+		    </a>
+		  </li>
+		  <li class="col">
+
+		    <div class="card h-100">
+		    <a class="close" href="#">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16" color="#7F7C82" id="close">
+				  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+				  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+				</svg>		    
+		    </a>
+		  	<a href="sub_switch2.html"  class="none">		    
+		      <img src="https://cdn2.whatoplay.com/screenshots/87727-1614573290625slide-1.jpeg" class="card-img-top" alt="...">
+		      <div class="card-body">
+		        <h5 class="card-title"><b>포켓몬 레전드 아르세우스</b></h5>
+		        <p class="card-text subtext">포켓몬 시리즈의 RPG 뿌리에 액션과 탐험을 결합한 Game Freak의 새로운 게임인 Pokémon Legends: Arceus에서 새로운 종류의 웅장한 Pokémon 모험을 준비하십시오.</p>
+		      </div>
+		    </div>
+		    </a>
+		  </li>
+		  <li class="col">
+
+		    <div class="card h-100">
+		    <a class="close" href="#">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16" color="#7F7C82" id="close">
+				  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+				  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+				</svg>		    
+		    </a>
+		  	<a href="sub_switch1.html"  class="none">		    
+		      <img src="https://cdn2.whatoplay.com/screenshots/41293_1560832121slide-2.jpg" class="card-img-top" alt="...">
+		      <div class="card-body">
+		        <h5 class="card-title"><b>모여봐요 동물의 숲</b></h5>
+		        <p class="card-text subtext">바쁘고 바쁜 현대 생활로 인해 좌절감을 느낀다면 Tom Nook은 당신이 좋아할 만한 새로운 비즈니스 벤처를 준비했습니다. 바로 Nook Inc.</p>
+		      </div>
+		    </div>
+		    </a>
+		  </li>
+		  <li class="col">
+
+		    <div class="card h-100">
+		    <a class="close" href="#">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16" color="#7F7C82" id="close">
+				  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+				  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+				</svg>		    
+		    </a>
+		  	<a href="sub_pc2.html"  class="none">		    
+		      <img src="https://cdn2.whatoplay.com/screenshots/12276_1623406144slide-2.jpg" class="card-img-top" alt="...">
+		      <div class="card-body">
+		        <h5 class="card-title"><b>로스트 아크</b></h5>
+		        <p class="card-text subtext">끝없는 깊이의 매혹적인 세계에서 로스트아크를 향한 여정을 시작하세요.</p>
+		      </div>
+		    </div>
+		    </a>
+		  </li>		  
+		</div>
+	</ul>
+	<footer>
+		<br>
+		<div class="inner"><div class="copyright center">Copyright<time>2022</time>.<a href='#'><b>(팀명)</b></a> all rights reserved.</div>
+						   <div class="designed-by center">Designed by <a href='#'><b> (팀명)</b></a></div>
+							 <div class="footer-logo center">logo</div><br>
+		</div>
+	</footer>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
