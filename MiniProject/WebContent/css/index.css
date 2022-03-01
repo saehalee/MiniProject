@@ -1,9 +1,9 @@
 :root{
-    --bs-primary: #5c27fe;
+    --bs-primary: #7244FE;
 }
 hr{
     margin:	1rem 5em;
-    border: 1px solid #5c27fe;
+    border: 1px solid #7244FE;
     opacity: 100%;
 }
 h4{
@@ -16,7 +16,12 @@ a{
   padding-left: 0px;
   padding-right: 0px;
 }
-
+.bg-primary{
+    background-color: #7244FE;
+}
+.bg-second-color{
+    background-color: #c165dd
+}
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -28,51 +33,86 @@ a{
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
-    user-select: all;
+    user-select: none;
     background-color: transparent;
     border: 1px solid transparent;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     border-radius: 2rem; /* 0.25rem;  */
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0s ease-in-out, box-shadow 0 ease-in-out;
 }
-.bg-primary{
-    background-color: #5c27fe;
+.btn-check:focus + .btn, .btn:focus {
+	outline: 0;
+	box-shadow: 0;
+  }
+.btn-check:focus + btn-primary, .btn-primary:focus{
+	background-color: #7244FE;
+	border-color: #7244FE;
+	box-shadow: 0;
 }
-.bg-second-color{
-    background-color: #c165dd
+.btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle{
+	background-color: #7244FE;
+	border-color: #7244FE;
+}
+.btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
+	box-shadow: 0;
 }
 .btn-group{
     margin: 0 auto;
 }
 .btn-primary {
     color: #fff;
-    background-color: #5c27fe; /* #0d6efd; */
-    border-color: #5c27fe; /* #0d6efd; */
+    background-color: #7244FE; /* #0d6efd; */
+    border-color: #7244FE; /* #0d6efd; */
 }
 .btn-primary:hover, .btn-primary:focus{
-    color: #fff;
+    color: #7f7c82;
     background-color: #d0c1ff;
     border-color: #d0c1ff;
+    box-shadow: 0;
 }
 .btn-outline-primary {
-    color: #5c27fe;
-    border-color: #5c27fe;
+    color: #7244FE;
+    border: 0.01em solid #7244FE;
 }
 .btn-outline-primary:hover {
     color: #fff;
-    background-color: #5c27fe;
-    border-color: #5c27fe;
+    background-color: #7244FE;
+}
+.btn-check:checked + .btn-outline-primary, .btn-check:active + .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show {
+    color: #fff;
+    background-color: #7244FE;
+    border-color: #7244FE;
+  }
+.btn-check:focus + .btn-outline-primary, .btn-outline-primary:focus {
+    box-shadow: 0;
+}
+.btn-check:checked + .btn-outline-primary:focus, .btn-check:active + .btn-outline-primary:focus, .btn-outline-primary:active:focus, .btn-outline-primary.active:focus, .btn-outline-primary.dropdown-toggle.show:focus {
+    box-shadow: 0;
+}
+.btn-outline-primary:disabled, .btn-outline-primary.disabled {
+    color: #7244FE;
+    background-color: transparent;
+  }
+.btn-sm{
+    width: 90px;
+    height: 33px;
+    font-weight: 400;
+}
+.btn-sm > .btn {
+    padding: 0.375rem 0.5rem;
+    font-size: 1rem;
+    border-radius: 1rem;
 }
 .btn-new {
     color: #fff;
-    background-color: #5c27fe;
-    border-color: #5c27fe;
+    background-color: #7244FE;
+    border-color: #7244FE;
 }
 .rank{
     display: inline;
     border-radius: 0.25rem;
-    background-color: #5c27fe;
+    background-color: #7244FE;
 }
 .badge {
     display: inline-block;
@@ -90,7 +130,7 @@ a{
     margin-bottom: 10px;
     font-size: 0.90em;
     font-weight: 300;
-    color: #5c27fe;
+    color: #7244FE;
 }
 .main-thumbnail-part{
     background-color: #f3f1f5;
@@ -111,8 +151,8 @@ a{
 }
 .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #5c27fe;
-    border-color: #5c27fe;
+    background-color: #7244FE;
+    border-color: #7244FE;
   }
 .main-thumbnail-box:hover .hashtag,
 .main-thumbnail-box:hover .btn-outline-primary
@@ -125,9 +165,9 @@ a{
     margin-bottom: 10px;
 }
 .main-thumbnail-box:hover .hashtag:hover{
-    color: #5c27fe;
+    color: #7244FE;
     background-color: #fff;
-    border-color: #5c27fe;
+    border-color: #7244FE;
 }
 .main-thumbnail-description{
     padding: 10px;
@@ -140,7 +180,7 @@ a{
 }
 .rounded-outline-pill{
     background-color: transparent;
-    border: 1.5px solid #5c27fe;
+    border: 1.5px solid #7244FE;
     border-radius: 50rem !important;
 }
 .right{
@@ -159,7 +199,7 @@ a{
     border-radius: 10px;
 }
 .inner{
-    box-shadow: 0px -0.5px 50px #5c27fe;
+    box-shadow: 0px -0.5px 50px #7244FE;
     background-color: #f3f1f5;
     padding: 2em;
 }

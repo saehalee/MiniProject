@@ -9,135 +9,18 @@
 * {
 	font-family: 'KoPubDotumMedium';
 }
-
-main {
-    width: 100vw;
+.mainColor{
+	background-color: #7244FE;
 }
-
 .wrapper {
     margin: 0 auto;
-    padding: 30px;
+    padding: 10px;
     box-sizing: border-box;
     max-width: 600px;
 }
-
-:root{
-	--bs-primary: #5c27fe;
-}
-hr{
-	margin:	1rem 5em;
-	border: 1px solid #5c27fe; 
-	opacity: 100%;
-}
-h4{
-	font-weight: 700;
-}
-table{
-	margin: 0 auto;
-}
-.btn{
-	border-radius: 30px;
-}
-.bg-primary{
-	background-color: #5c27fe;
-}
-.sort-group{
-	width: 150px;
-	border-radius: 30px;
-}
-.btn-group{
-	margin: 0 auto;
-}
-.btn-primary {
- 		color: #fff;
- 		background-color: #5c27fe;
- 		border-color: #5c27fe;
-}
-.btn-primary:hover, .btn-primary:focus{
- 	color: #fff;
- 	 	background-color: #d0c1ff;
- 	 	border-color: #d0c1ff;
-}
-.btn-outline-primary {
- 		color: #5c27fe;
-	    border-color: #5c27fe;
-}
-.btn-outline-primary:hover {
- 		color: #fff;
- 		background-color: #5c27fe;
-		border-color: #5c27fe;
-}
-.btn-new {
- 		color: #fff;
- 		background-color: #5c27fe;
- 		border-color: #5c27fe;
-}
-.rank{
-	display: inline-block;
-	margin: 0 auto;
-}
-.badge {
-	display: inline-block;
-	margin-top: 10px;
-	padding: 0.35em 0.65em;
-	font-size: 0.75em;
-	font-weight: 700;
-	line-height: 1;
-	color: #fff;
+.text-center{
 	text-align: center;
-	white-space: nowrap;
-	vertical-align: baseline;
-	border-radius: 0.25rem;
 }
-.hashtag{
-	margin-bottom: 10px;
-	font-size: 0.90em;
-	font-weight: 300;
-	color: #5c27fe;
-}
-.main-thumbnail-part{
-	
-	background-color: #f3f1f5;
-	border-radius: 30px;
-	margin: 0 5em;
-}
-.main-thumbnail-box{	
-	margin: 3px;
-	padding: 10px;
-	background-color: #e8e0ff;
-	border-radius: 20px;
-}
-.main-thumbnail-box:hover{
-	color: #fff;
-	background: linear-gradient(to right, #c165dd, #5c27fe);
-	box-shadow: 1px 1px 5px #7f7c82;
-}
-.main-thumbnail-box:hover .hashtag, 
-.main-thumbnail-box:hover .btn-outline-primary
-.main-thumbnail-box:hover .rounded-pill{
-	color: #fff;
- 		background-color: transperent;
-		border-color: #fff;
-}
-.main-thumbnail-box .rank{
-	margin: 10px;
-}
-.main-thumbnail-box:hover .hashtag:hover{
-	color: #5c27fe;
-	background-color: #fff;
-	border-color: #5c27fe;
-}
-.main-thumbnail-description{
-	margin-left: 10px;
-	margin-right: 10px;
-	/* text-align: left; */
-	width: 400px;
-	height: 210px;
-}
-.rounded-pill{
- 	background-color: transparent; 
-	border: 1.5px solid #5c27fe;
-} 
 .right{
 	float: right;
 	margin-right: 10px;
@@ -147,22 +30,65 @@ table{
 	text-align: center;
 	align-content: center;
 }
-.main-thumbnail-img{
-	width: 200px;
-	height: 200px;
-	margin: 0px 10px 10px 10px;
-	float: left;
-	/* bottom: 10px; */
-	border-radius: 10px;
+/* -------- 추가 -------- */
+.sm_msg{
+	color: #7f7c82;
+	font-size: x-small;
+	margin-bottom: 7px;
 }
-.main-thumbnail-img:hover{
-	background-color: black 50%;
+.inline{
+	display:inline-block;
 }
-.inner{
-	box-shadow: 0px -0.5px 50px #5c27fe;
-	background-color: #f3f1f5;
-	padding: 20px; 
+h5{
+	font-size: 1.2em;
+	font-weight: bold;
 }
-.copyright, .designed-by, .footer-logo{
-	font-size: 11px;
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	color:#7f7c82;
+	font-size: 1em;
+	width: 70px;
+	height: 33px;
+	border-radius: 30px;
+	border: 0.01em solid #7f7c82;
+	text-align: center;
+}
+select:hover{
+	border:0.01em solid #7244FE;
+}
+input[type=text], input[type=password]{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-size: 1em;
+	height: 33px;
+	border-radius: 30px;
+	text-align: center;
+	border: 0.01em solid #7f7c82;
+}
+input[type=text]:hover, input[type=password]:hover, input[type=text]:focus, input[type=password]:focus{
+	border:0.01em solid #7244FE;
+}
+#year{
+	width: 100px;
+}
+.gender{
+	width: 300px;
+	height: 33px;
+	font-size: 1em;
+}
+#company{
+	width: 80px;
+}
+label, .date{
+	font-size: 1em;
+}
+.row{
+	justify-content: space-around;
+}
+button:hover{
+	color: #7244FE;
+	background-color: transparent;
 }
