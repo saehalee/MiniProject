@@ -2,160 +2,173 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1" />
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1" />
 <title>엘든 링</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link href="css/sub.css" rel="stylesheet">
+<link href="css/test.css" rel="stylesheet">
 <script src="js/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function(){
-	$('#reviewadd').on('click', function() {
-		var text = $('#memo').val();
-		$('#review1').append("<div><p>\"" + text + "\"</p></div>");
-		$('#memo').val('');
-	});//reviewadd end
-	
-	var cnt = 0;
-	$('#star').on('click', function () {
-		cnt++;
-		if(cnt == 1){
-			$('#star5').attr('class', 'bi bi-star-half');
-			$('#star5-1').attr('d', 'M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z');
-		}
-		else if(cnt == 2){
-			$('#star5').attr('class', 'bi bi-star-fill');
-			$('#star5-1').attr('d', 'M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z');
-		}
-		else if(cnt == 3){
-			$('#star4').attr('class', 'bi bi-star-half');
-			$('#star4-1').attr('d', 'M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z');
-		}
-		else if(cnt == 4){
-			$('#star4').attr('class', 'bi bi-star-fill');
-			$('#star4-1').attr('d', 'M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z');
-		}
-		else if(cnt == 5){
-			$('#star3').attr('class', 'bi bi-star-half');
-			$('#star3-1').attr('d', 'M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z');
-		}
-		else if(cnt == 6){
-			$('#star3').attr('class', 'bi bi-star-fill');
-			$('#star3-1').attr('d', 'M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z');
-		}
-		else if(cnt == 7){
-			$('#star2').attr('class', 'bi bi-star-half');
-			$('#star2-1').attr('d', 'M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z');
-		}
-		else if(cnt == 8){
-			$('#star2').attr('class', 'bi bi-star-fill');
-			$('#star2-1').attr('d', 'M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z');
-		}
-		else if(cnt == 9){
-			$('#star1').attr('class', 'bi bi-star-half');
-			$('#star1-1').attr('d', 'M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z');
-		}
-		else if(cnt == 10){
-			$('#star1').attr('class', 'bi bi-star-fill');
-			$('#star1-1').attr('d', 'M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z');
-		}
-		else{
-			cnt=0;
-			$('#star1').attr('class', 'bi bi-star');
-			$('#star1-1').attr('d','M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z');
-			$('#star2').attr('class', 'bi bi-star');
-			$('#star2-1').attr('d','M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z');
-			$('#star3').attr('class', 'bi bi-star');
-			$('#star3-1').attr('d','M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z');
-			$('#star4').attr('class', 'bi bi-star');
-			$('#star4-1').attr('d','M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z');
-			$('#star5').attr('class', 'bi bi-star');
-			$('#star5-1').attr('d','M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z');
-		}
-	});//star end
-	
-});//jquary end
-</script>
+<script src="js/sub.js"></script>
 </head>
 
 <body>
-<div class="hidden" id="tema">
-	<div class="left" id="tema1">
-		<h1>엘든 링 <br> (Elden Ring)</h1>
-		<img id="img1" src="images/elden/elden1.jpg">
-		<p>XBOX</p>
-		<p>2022년 2월 25일</p>
-		<p>액션, RPG, 오픈 필드, 3인칭</p>
-	</div>
-	
-	<div class="right" id="ratings" style="margin-bottom: 10px;">
-		<div style="float: left;">
-			<h2 id="star">별점:<svg id="star5" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-					<path id="star5-1" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg>
-					<svg id="star4" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-					<path id="star4-1" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg>
-					<svg id="star3" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-					<path id="star3-1" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg>
-					<svg id="star2" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-					<path id="star2-1" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg>
-					<svg id="star1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-					<path id="star1-1" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg>
-			</h2>
+	<nav class="navbar navbar-light bg-light fixed-top">
+	  <div class="container-fluid">
+		  <div class="d-flex justify-content-start">			
+		    <a class="navbar-brand " href="index.html">
+		    	<img src="images/logo_sm.png" width="10%">	    	
+		    	<b>Game Trend</b>
+		    </a>	  	
+		  </div>	    	   
+	      <form class="d-flex justify-content-center">   
+	        <input class="form-control me-2 col-12" type="Search" placeholder="검색" aria-label="Search">
+	        <button class="btn btn-primary mainColor" type="submit">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg>	        	
+	        </button>        
+	      </form>
+		  <form class="d-flex justify-content-end">
+		    <button class="btn btn-primary me-2 mainColor" type="button" id="loginBtn">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16" style="display: inline">
+				  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+				  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+				</svg>		    	
+		    	로그인
+		    </button>
+		    <button class="btn btn-outline-primary me-2 mainColorOutline" type="button" id="joinBtn">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+				  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+				</svg>		    
+		    	회원가입
+		    </button>
+	  		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>		    		   		 
+		  </form>
+
+		    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">마이 페이지</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item mx-auto">
+            <a class="nav-link active" aria-current="page" href="#">
+				<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" color="#7F7C82">
+				  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+				  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+				</svg>            	
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="wishlist" class="nav-link active" aria-current="page" href="wishlist.html">위시리스트</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">회원 정보 수정</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" href="#" id="logout">로그아웃</a>
+          </li>          
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="검색" aria-label="Search">
+          <button class="btn btn-primary" type="submit">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+			  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+			</svg>
+          </button>
+        </form>
+      </div>
+    </div>
+    </div>             
+	</nav>
+	<main>
+		<div class="hidden" id="tema">
+			<div class="left" id="tema1">
+				<h1>엘든 링 <br> (Elden Ring)</h1>
+				<img id="img1" src="images/elden/elden1.jpg">
+				<p>XBOX</p>
+				<p>2022년 2월 25일</p>
+				<p>액션, RPG, 오픈 필드, 3인칭</p>
+			</div>
+			
+			<div class="right" id="ratings" style="margin-bottom: 10px;">
+				<div style="float: left;">
+					<h2 id="star">별점:<svg id="star5" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+							<path id="star5-1" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg>
+							<svg id="star4" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+							<path id="star4-1" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg>
+							<svg id="star3" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+							<path id="star3-1" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg>
+							<svg id="star2" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+							<path id="star2-1" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg>
+							<svg id="star1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+							<path id="star1-1" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg>
+					</h2>
+				</div>
+				
+				<div style="float: right;">
+					<h2>조회수: 0</h2>
+				</div>
+			</div>
+			
+			<div class="right" id="explain">
+				<h2>게임 설명</h2>
+				<p> 영원의 여왕 마리카를 받드는 틈새의 땅에서 황금 나무의 근원인 엘든 링이 부서졌다. 
+				마리카의 피를 이은 아이, 「데미갓」들은 엘든 링의 파편인 거대한 룬을 손에 넣었고 
+				그 힘에 미쳐 뒤틀리고, 끝내 파쇄전쟁을 일으켜…… 위대한 뜻으로부터 버림받았다. 
+				그리고 과거 눈동자에서 황금의 축복을 잃고 틈새의 땅에서 쫓겨난 빛바랜 자들에게 축복의 인도가 내린다. 축복을 잃고 미처 죽지 못한 죽은 자들이여. 
+				인도를 따라 안개의 바다를 넘어 틈새의 땅으로 향해 엘든 링을 알현하라. 그리고 엘데의 왕이 되어라.</p>
+				<p> 본 게임은 본격적인 다크 판타지 세계를 무대로 한 액션 RPG입니다. 드넓은 필드와 던전 탐험을 통해 미지의 것들을 발견해 보세요. 
+				앞길을 막아서는 난관과 그것을 극복했을 때의 달성감, 그리고 등장인물들의 의도가 교착하는 군상극도 즐기실 수 있습니다.</p>
+			</div>
 		</div>
 		
-		<div style="float: right;">
-			<h2>조회수: 0</h2>
+		<h3>트레일러, 게임이미지 && 스크린샷</h3>
+		<div class="hidden1" style="background-color: black;">
+			<div style="float: left; margin-bottom: 0px; margin-right: 8px;">
+				<iframe width="390" height="315" src="https://www.youtube.com/embed/Uenqx3PIiD4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<img class="img2" src="images/elden/elden2.jpg">
+			<img class="img2" src="images/elden/elden3.jpg">
+			<img class="img2" src="images/elden/elden4.jpg">
+			<img class="img2" src="images/elden/elden5.jpg">
 		</div>
-	</div>
-	
-	<div class="right" id="explain">
-		<h2>게임 설명</h2>
-		<p> 영원의 여왕 마리카를 받드는 틈새의 땅에서 황금 나무의 근원인 엘든 링이 부서졌다. 
-		마리카의 피를 이은 아이, 「데미갓」들은 엘든 링의 파편인 거대한 룬을 손에 넣었고 
-		그 힘에 미쳐 뒤틀리고, 끝내 파쇄전쟁을 일으켜…… 위대한 뜻으로부터 버림받았다. 
-		그리고 과거 눈동자에서 황금의 축복을 잃고 틈새의 땅에서 쫓겨난 빛바랜 자들에게 축복의 인도가 내린다. 축복을 잃고 미처 죽지 못한 죽은 자들이여. 
-		인도를 따라 안개의 바다를 넘어 틈새의 땅으로 향해 엘든 링을 알현하라. 그리고 엘데의 왕이 되어라.</p>
-		<p> 본 게임은 본격적인 다크 판타지 세계를 무대로 한 액션 RPG입니다. 드넓은 필드와 던전 탐험을 통해 미지의 것들을 발견해 보세요. 
-		앞길을 막아서는 난관과 그것을 극복했을 때의 달성감, 그리고 등장인물들의 의도가 교착하는 군상극도 즐기실 수 있습니다.</p>
-	</div>
-</div>
-
-<h3>트레일러, 게임이미지 && 스크린샷</h3>
-<div class="hidden1" style="background-color: black;">
-	<div style="float: left; margin-bottom: 0px; margin-right: 8px;">
-		<iframe width="390" height="315" src="https://www.youtube.com/embed/Uenqx3PIiD4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	</div>
-	<img class="img2" src="images/elden/elden2.jpg">
-	<img class="img2" src="images/elden/elden3.jpg">
-	<img class="img2" src="images/elden/elden4.jpg">
-	<img class="img2" src="images/elden/elden5.jpg">
-</div>
-
-<h3>리뷰</h3>
-<div class="hidden">
-	<div class="left" id="review1">
-		<p>리뷰내용</p>
-	</div>
-	
-	<div class="right">
-		<h4>리뷰 쓰기</h4>
-		<textarea id="memo" rows="10" cols="70" style="width: 80%;"></textarea>
+		
+		<h3>리뷰</h3>
+		<div class="hidden">
+			<div class="left" id="review1">
+				<p>리뷰내용</p>
+			</div>
+			
+			<div class="right">
+				<h4>리뷰 쓰기</h4>
+				<textarea id="memo" rows="10" cols="70" style="width: 80%;"></textarea>
+				<br>
+				<input id="reviewadd" type="button" value="리뷰 입력" style="background-color: #7244FE; color: #FFFFFF">
+			</div>
+		</div>
+		
+		<h3>게임 추천</h3>
+		<div class="hidden1">
+			<table>
+				<tr><td><div class="recommendation" style="background-color: #B9A1FF;"><a><img class="img3" src="images/gta1.jpg"><p>그랜드 테프트 오토 V</p><p>PS3</p><p>2013년 9월 17일</p></a></div></td>
+					<td><div class="recommendation" style="background-color: #B9A1FF;"><a><img class="img3" src="images/gta1.jpg"><p>그랜드 테프트 오토 V</p><p>PS3</p><p>2013년 9월 17일</p></a></div></td>
+					<td><div class="recommendation" style="background-color: #B9A1FF;"><a><img class="img3" src="images/gta1.jpg"><p>그랜드 테프트 오토 V</p><p>PS3</p><p>2013년 9월 17일</p></a></div></td>
+					<td><div class="recommendation" style="background-color: #B9A1FF;"><a><img class="img3" src="images/gta1.jpg"><p>그랜드 테프트 오토 V</p><p>PS3</p><p>2013년 9월 17일</p></a></div></td>
+					<td><div class="recommendation" style="background-color: #B9A1FF;"><a><img class="img3" src="images/gta1.jpg"><p>그랜드 테프트 오토 V</p><p>PS3</p><p>2013년 9월 17일</p></a></div></td></tr>
+			</table>
+		</div>
+	</main>
+	<div class="space" style="height:500"></div>
+	<footer>
 		<br>
-		<input id="reviewadd" type="button" value="리뷰 입력" style="background-color: #7244FE; color: #FFFFFF">
-	</div>
-</div>
-
-<h3>게임 추천</h3>
-<div class="hidden1">
-	<table>
-		<tr><td><div class="recommendation" style="background-color: #B9A1FF;"><a><img class="img3" src="images/gta1.jpg"><p>그랜드 테프트 오토 V</p><p>PS3</p><p>2013년 9월 17일</p></a></div></td>
-			<td><div class="recommendation" style="background-color: #B9A1FF;"><a><img class="img3" src="images/gta1.jpg"><p>그랜드 테프트 오토 V</p><p>PS3</p><p>2013년 9월 17일</p></a></div></td>
-			<td><div class="recommendation" style="background-color: #B9A1FF;"><a><img class="img3" src="images/gta1.jpg"><p>그랜드 테프트 오토 V</p><p>PS3</p><p>2013년 9월 17일</p></a></div></td>
-			<td><div class="recommendation" style="background-color: #B9A1FF;"><a><img class="img3" src="images/gta1.jpg"><p>그랜드 테프트 오토 V</p><p>PS3</p><p>2013년 9월 17일</p></a></div></td>
-			<td><div class="recommendation" style="background-color: #B9A1FF;"><a><img class="img3" src="images/gta1.jpg"><p>그랜드 테프트 오토 V</p><p>PS3</p><p>2013년 9월 17일</p></a></div></td></tr>
-	</table>
-</div>
-
-
+		<div class="inner"><div class="footer-logo center"><img src="images/logo.png" width="80px"></div><br>
+		<div class="copyright center">Copyright<time>2022</time>. <a href='#'><b> G-Masters</b></a> all rights reserved.</div>
+		<div class="designed-by center">Designed by <a href='https://getbootstrap.kr/docs/5.1/assets/brand/bootstrap-logo.svg'><b>Bootstrap and G-Masters</b></a></div>
+		<br>
+	</footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
